@@ -2,6 +2,10 @@ FROM ubuntu:16.04
 
 FROM python:3.6.5
 
+#install pipenv and compilation dependencies
+RUN pip install pipenv
+RUN apt-get update && apt-get install -y --no-install-recommends gcc
+
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 
